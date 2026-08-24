@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug in DevLinks
+description: Report a bug in RecipeCard
 labels: ["bug", "needs reproduction"]
 body:
   - type: textarea

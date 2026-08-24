@@ -1,4 +1,4 @@
-name: DevLinks Review Bot
+name: RecipeCard Review Bot
 on:
   pull_request_target:
     types: [opened, reopened]

@@ -1,17 +1,19 @@
-:root { --brand: #4f46e5; }
+:root { --brand: #c2410c; }
 
-body { font-family: system-ui, sans-serif; background: #f5f6fb; margin: 0; color: #1b1f2a; }
+body { font-family: system-ui, sans-serif; background: #fff7f2; margin: 0; color: #2a1b12; }
 
-.card { max-width: 420px; margin: 2rem auto; background: #fff; border-radius: 16px; padding: 2rem; text-align: center; }
-.avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
-.bio { color: #5b6472; }
+.card { max-width: 460px; margin: 2rem auto; background: #fff; border-radius: 16px; padding: 2rem; }
+.dish { width: 100%; height: 200px; border-radius: 12px; object-fit: cover; }
+h1 { text-align: center; }
 
-.links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.2rem; }
+.meta { display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; color: #6b5546; font-size: 0.9rem; margin: 0.8rem 0; }
+.servings { display: flex; align-items: center; gap: 0.4rem; }
+.servings input { width: 3.5rem; padding: 0.3rem; }
 
-.btn { padding: 0.7rem 1rem; border-radius: 10px; border: none; cursor: pointer; text-decoration: none; font-size: 1rem; }
-/* BUG (issue #5): primary button uses grey placeholder instead of var(--brand) */
-.btn-primary { background: #999999; color: #fff; }
-/* BUG (issue #12): buttons have no :hover state */
-/* BUG (issue #8): layout is not responsive on small screens (no @media rule) */
+.ingredients ul, .steps ul { padding-left: 1.2rem; }
 
-footer { margin-top: 1.5rem; color: #8a90a2; font-size: 0.85rem; }
+/* BUG (issue #10): long ingredient names overflow the card because text does not wrap
+   (needs word-break / overflow-wrap on list items). */
+.ingredients li { white-space: nowrap; }
+
+footer { margin-top: 1.5rem; text-align: center; color: #b08968; font-size: 0.85rem; }

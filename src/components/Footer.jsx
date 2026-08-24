@@ -1,4 +1,8 @@
 export default function Footer() {
-  // BUG (issue #4): footer year is outdated
-  return <footer>© 2019 OpenNest · DevLinks</footer>
+  // BUG (issue #9): rating is a hardcoded placeholder ("0 reviews") that never updates.
+  return (
+    <footer>
+      ★★★★★ · 0 reviews · © OpenNest · RecipeCard
+    </footer>
+  )
 }

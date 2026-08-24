@@ -1,10 +1,9 @@
-export default function Header() {
+export default function Header({ title, image }) {
   return (
     <header>
-      {/* BUG (issue #2): avatar image is missing alt text */}
-      <img className="avatar" src="/avatar.png" />
-      {/* BUG (issue #1): "Wecome" should be "Welcome" */}
-      <h1>Wecome to DevLinks</h1>
+      {/* BUG (issue #6): dish image is missing alt text */}
+      <img className="dish" src={image} />
+      <h1>{title}</h1>
     </header>
   )
 }
