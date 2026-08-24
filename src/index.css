@@ -1,0 +1,17 @@
+:root { --brand: #4f46e5; }
+
+body { font-family: system-ui, sans-serif; background: #f5f6fb; margin: 0; color: #1b1f2a; }
+
+.card { max-width: 420px; margin: 2rem auto; background: #fff; border-radius: 16px; padding: 2rem; text-align: center; }
+.avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
+.bio { color: #5b6472; }
+
+.links { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.2rem; }
+
+.btn { padding: 0.7rem 1rem; border-radius: 10px; border: none; cursor: pointer; text-decoration: none; font-size: 1rem; }
+/* BUG (issue #5): primary button uses grey placeholder instead of var(--brand) */
+.btn-primary { background: #999999; color: #fff; }
+/* BUG (issue #12): buttons have no :hover state */
+/* BUG (issue #8): layout is not responsive on small screens (no @media rule) */
+
+footer { margin-top: 1.5rem; color: #8a90a2; font-size: 0.85rem; }

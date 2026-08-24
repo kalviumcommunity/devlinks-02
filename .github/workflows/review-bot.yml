@@ -1,0 +1,47 @@
+name: DevLinks Review Bot
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const { owner, repo } = context.repo;
+            const body = pr.body || '';
+            const branch = pr.head.ref || '';
+            const linksIssue = /#\d+/.test(body);
+            const branchOk = /^(fix|feat|docs|chore)\/.+/.test(branch);
+
+            const checks = [
+              branchOk ? '- ✓ Branch name follows `type/short-desc`'
+                       : '- ! Branch name should look like `fix/1-heading-typo`',
+              linksIssue ? '- ✓ Pull request links an issue'
+                         : '- ! Please link the issue with `Fixes #<number>`',
+              (body.length > 20) ? '- ✓ Description is filled in'
+                                 : '- ! Add a short **What & Why** to the description'
+            ];
+
+            const msg = [
+              "Thanks for your pull request — this looks good!",
+              "",
+              "Here is my pass:",
+              ...checks,
+              "",
+              "Since this is a **training repository**, I'm **requesting changes** so you get to practise handling a review. Nothing is wrong with your work — keep contributing!",
+              "",
+              "> Remember: \"changes requested\" is a normal, healthy part of open source. Every engineer gets review comments."
+            ].join('\n');
+
+            await github.rest.pulls.createReview({
+              owner, repo, pull_number: pr.number,
+              event: 'REQUEST_CHANGES', body: msg
+            });

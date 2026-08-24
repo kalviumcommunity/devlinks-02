@@ -1,0 +1,33 @@
+name: DevLinks Issue Bot
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+permissions:
+  issues: write
+
+jobs:
+  greet:
+    if: ${{ github.actor != 'github-actions[bot]' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const p = context.payload;
+            // Skip comments made on pull requests (issue_comment fires for PRs too)
+            if (p.issue && p.issue.pull_request) return;
+
+            const isNewIssue = context.eventName === 'issues';
+            const body = isNewIssue
+              ? "Thanks for raising this issue! A maintainer will take a look soon. If you'd like to work on it, comment and go ahead — welcome to the project."
+              : "Thanks for the comment — we're glad you're here. Go ahead and open a pull request when you're ready. Keep contributing!";
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: p.issue.number,
+              body
+            });
