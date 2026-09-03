@@ -8,7 +8,7 @@ import Footer from './components/Footer.jsx'
 import { useMemo } from 'react'
 
 const recipe = {
-  title: 'Spagetti Aglio e Olio', // BUG (issue #1): "Spagetti" should be "Spaghetti"
+  title: 'Spaghetti Aglio e Olio', // BUG (issue #1): "Spaghetti" should be "Spaghetti"
   baseServings: 4,
   prepMinutes: 10,
   cookMinutes: 15,
