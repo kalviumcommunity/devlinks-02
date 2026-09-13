@@ -5,7 +5,7 @@ export default function Ingredients({ items, scale }) {
       <ul>
         {items.map((it) => (
           // BUG (issue #2): missing "key" prop on the mapped list item.
-          <li>
+          <li key={`${it.name}-${it.unit}-${it.qty}`}>
             {scale(it.qty)} {it.unit} — {it.name}
           </li>
         ))}
