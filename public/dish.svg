@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" width="100%" height="100%">
+  <defs>
+    <radialGradient id="plateGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="85%" stop-color="#f5ede6"/>
+      <stop offset="100%" stop-color="#e3d5c9"/>
+    </radialGradient>
+    <radialGradient id="tableGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff1e6"/>
+      <stop offset="100%" stop-color="#f8dec9"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background / table -->
+  <rect width="600" height="350" fill="url(#tableGrad)"/>
+
+  <!-- Plate shadow & plate -->
+  <ellipse cx="300" cy="180" rx="220" ry="140" fill="url(#plateGrad)" filter="url(#shadow)"/>
+  <ellipse cx="300" cy="180" rx="190" ry="115" fill="#fcf9f5" stroke="#ecdccf" stroke-width="3"/>
+  <ellipse cx="300" cy="180" rx="150" ry="85" fill="#fefdfb"/>
+
+  <!-- Olive Oil Sheen -->
+  <ellipse cx="300" cy="180" rx="120" ry="65" fill="#fef08a" opacity="0.35"/>
+
+  <!-- Spaghetti strands -->
+  <g stroke="#f59e0b" stroke-width="4.5" stroke-linecap="round" fill="none">
+    <path d="M220 180 Q250 140 300 160 T380 180"/>
+    <path d="M210 190 Q260 220 310 190 T390 170"/>
+    <path d="M230 170 Q280 130 330 175 T370 195"/>
+    <path d="M240 200 Q290 160 340 185 T380 165"/>
+    <path d="M205 185 Q255 150 305 170 T365 200"/>
+    <path d="M225 160 Q275 200 325 155 T395 185"/>
+    <path d="M250 190 Q300 135 350 170 T375 180"/>
+    <path d="M215 175 Q265 210 315 180 T385 190"/>
+    <path d="M235 185 Q285 145 335 190 T360 160"/>
+  </g>
+  <g stroke="#d97706" stroke-width="3.5" stroke-linecap="round" fill="none">
+    <path d="M225 180 Q270 150 315 165 T375 175"/>
+    <path d="M215 195 Q265 170 315 195 T365 180"/>
+    <path d="M245 165 Q295 185 345 160 T385 190"/>
+  </g>
+
+  <!-- Golden Garlic Slices -->
+  <ellipse cx="260" cy="165" rx="11" ry="7" fill="#fde68a" stroke="#d97706" stroke-width="1.5" transform="rotate(-15 260 165)"/>
+  <ellipse cx="320" cy="155" rx="12" ry="8" fill="#fde68a" stroke="#d97706" stroke-width="1.5" transform="rotate(25 320 155)"/>
+  <ellipse cx="350" cy="185" rx="10" ry="6" fill="#fde68a" stroke="#d97706" stroke-width="1.5" transform="rotate(-30 350 185)"/>
+  <ellipse cx="280" cy="200" rx="11" ry="7" fill="#fde68a" stroke="#d97706" stroke-width="1.5" transform="rotate(10 280 200)"/>
+
+  <!-- Red Pepper Flakes -->
+  <circle cx="250" cy="180" r="2.5" fill="#dc2626"/>
+  <circle cx="285" cy="160" r="2" fill="#ef4444"/>
+  <circle cx="310" cy="180" r="2.5" fill="#b91c1c"/>
+  <circle cx="335" cy="165" r="2" fill="#dc2626"/>
+  <circle cx="340" cy="195" r="2.5" fill="#ef4444"/>
+  <circle cx="270" cy="190" r="2" fill="#b91c1c"/>
+  <polygon points="295,175 299,173 297,178" fill="#dc2626"/>
+  <polygon points="325,190 329,188 327,193" fill="#dc2626"/>
+
+  <!-- Fresh Parsley Flakes -->
+  <path d="M275 170 C272 166 278 163 282 168 C285 164 290 168 286 172 Z" fill="#15803d"/>
+  <path d="M330 175 C327 171 333 168 337 173 C340 169 345 173 341 177 Z" fill="#16a34a"/>
+  <path d="M300 190 C297 186 303 183 307 188 C310 184 315 188 311 192 Z" fill="#15803d"/>
+  <path d="M245 170 C242 167 247 165 250 169 C252 166 256 169 253 172 Z" fill="#22c55e"/>
+  <path d="M355 175 C352 172 357 170 360 174 C362 171 366 174 363 177 Z" fill="#16a34a"/>
+</svg>

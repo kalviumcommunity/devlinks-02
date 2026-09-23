@@ -4,15 +4,13 @@ import Meta from './components/Meta.jsx'
 import Ingredients from './components/Ingredients.jsx'
 import Steps from './components/Steps.jsx'
 import Footer from './components/Footer.jsx'
-// BUG (issue #11): unused import left in the file
-import { useMemo } from 'react'
 
 const recipe = {
-  title: 'Spagetti Aglio e Olio', // BUG (issue #1): "Spagetti" should be "Spaghetti"
+  title: 'Spaghetti Aglio e Olio',
   baseServings: 4,
   prepMinutes: 10,
   cookMinutes: 15,
-  image: '/dish.png',
+  image: '/dish.svg',
   ingredients: [
     { name: 'Spaghetti', qty: 400, unit: 'g' },
     { name: 'Garlic cloves, thinly sliced', qty: 6, unit: '' },
@@ -30,12 +28,13 @@ const recipe = {
 
 export default function App() {
   const [servings, setServings] = useState(recipe.baseServings)
-  // BUG (issue #7): leftover debug console.log
-  console.log('debug: App rendered with servings', servings)
 
-  // BUG (issue #3): scaler uses "+" instead of "*", so quantities never scale correctly.
-  // BUG (issue #4): when servings is 0 this divides by zero and shows NaN/Infinity (no guard).
-  const scale = (qty) => (qty + servings) / recipe.baseServings
+  const scale = (qty) => {
+    const s = Number(servings)
+    if (!recipe.baseServings || !s || s <= 0 || isNaN(s)) return 0
+    const scaled = (qty * s) / recipe.baseServings
+    return Number(scaled.toFixed(2).replace(/\.00$/, ''))
+  }
 
   return (
     <main className="card">
