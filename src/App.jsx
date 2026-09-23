@@ -30,8 +30,6 @@ const recipe = {
 
 export default function App() {
   const [servings, setServings] = useState(recipe.baseServings)
-  // BUG (issue #7): leftover debug console.log
-  console.log('debug: App rendered with servings', servings)
 
   // BUG (issue #3): scaler uses "+" instead of "*", so quantities never scale correctly.
   // BUG (issue #4): when servings is 0 this divides by zero and shows NaN/Infinity (no guard).
