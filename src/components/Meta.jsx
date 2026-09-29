@@ -1,6 +1,6 @@
 export default function Meta({ prep, cook, servings, onServings }) {
   // BUG (issue #8): total time shows NaN when prep or cook is left blank/undefined (no fallback).
-  const total = prep + cook
+  const total = (prep ?? 0) + (cook ?? 0)
 
   return (
     <div className="meta">
