@@ -4,8 +4,7 @@ import Meta from './components/Meta.jsx'
 import Ingredients from './components/Ingredients.jsx'
 import Steps from './components/Steps.jsx'
 import Footer from './components/Footer.jsx'
-// BUG (issue #11): unused import left in the file
-import { useMemo } from 'react'
+
 
 const recipe = {
   title: 'Spagetti Aglio e Olio', // BUG (issue #1): "Spagetti" should be "Spaghetti"
